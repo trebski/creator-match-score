@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, XCircle, Instagram, Youtube, Music } from 'lucide-react';
+import { ArrowRight, CheckCircle, XCircle, Instagram, Youtube, Music, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
@@ -22,6 +21,9 @@ const Index = () => {
     tiktok: ''
   });
   const [results, setResults] = useState(null);
+  const [email, setEmail] = useState('');
+  const [isEmailSubmitting, setIsEmailSubmitting] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   const { toast } = useToast();
 
   const handleBusinessSubmit = (e) => {
@@ -84,11 +86,42 @@ const Index = () => {
     return reasons;
   };
 
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsEmailSubmitting(true);
+    
+    // Simulate email sending process
+    setTimeout(() => {
+      setIsEmailSubmitting(false);
+      setEmailSent(true);
+      toast({
+        title: "Report Sent!",
+        description: "The detailed analysis has been sent to your email.",
+        variant: "default"
+      });
+    }, 2000);
+  };
+
   const resetForm = () => {
     setStep(1);
     setBusinessData({ instagram: '', youtube: '', tiktok: '', website: '' });
     setCreatorData({ instagram: '', youtube: '', tiktok: '' });
     setResults(null);
+    setEmail('');
+    setEmailSent(false);
+    setIsEmailSubmitting(false);
   };
 
   return (
@@ -327,6 +360,67 @@ const Index = () => {
                    'Not Recommended'}
                 </Badge>
               </div>
+
+              {/* Email Capture Section */}
+              {!emailSent && (
+                <div className="border-t pt-6">
+                  <div className="text-center mb-4">
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Get Detailed Analysis Report</h4>
+                    <p className="text-gray-600 text-sm">
+                      Receive comprehensive insights, competitor analysis, and actionable recommendations directly to your inbox.
+                    </p>
+                  </div>
+                  
+                  <form onSubmit={handleEmailSubmit} className="space-y-4">
+                    <div>
+                      <Label htmlFor="email" className="flex items-center gap-2 text-gray-700">
+                        <Mail className="w-4 h-4 text-purple-500" />
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="mt-1"
+                        required
+                      />
+                    </div>
+                    
+                    <Button 
+                      type="submit" 
+                      disabled={isEmailSubmitting}
+                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                    >
+                      {isEmailSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                          Sending Report...
+                        </>
+                      ) : (
+                        <>
+                          Send Full Report
+                          <Mail className="ml-2 w-4 h-4" />
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </div>
+              )}
+
+              {/* Success Message */}
+              {emailSent && (
+                <div className="border-t pt-6">
+                  <div className="text-center p-4 bg-green-50 rounded-lg border border-green-200">
+                    <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
+                    <h4 className="text-lg font-semibold text-green-800 mb-1">Report Sent Successfully!</h4>
+                    <p className="text-green-700 text-sm">
+                      Check your inbox for the detailed analysis report. It may take a few minutes to arrive.
+                    </p>
+                  </div>
+                </div>
+              )}
 
               <Button onClick={resetForm} className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
                 Analyze Another Creator
