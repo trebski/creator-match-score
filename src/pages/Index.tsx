@@ -132,7 +132,14 @@ const Index = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold gradient-text mb-2">Creator Match</h1>
-          <p className="text-lg text-gray-500 mb-6">from ReferralCandy</p>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="text-lg text-gray-500">from</span>
+            <img 
+              src="/lovable-uploads/d776b04b-04f8-4707-90ce-460a477acffc.png" 
+              alt="ReferralCandy" 
+              className="h-6 w-auto"
+            />
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover if a creator is the perfect match for your brand. Our advanced analysis compares 
             social media profiles to find ideal partnerships for affiliate and ambassador programs.
