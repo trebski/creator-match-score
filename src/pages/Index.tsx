@@ -422,7 +422,11 @@ const Index = () => {
                 </div>
               )}
 
-              <Button onClick={resetForm} className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
+              <Button 
+                onClick={resetForm} 
+                variant="outline" 
+                className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
                 Analyze Another Creator
               </Button>
             </CardContent>
