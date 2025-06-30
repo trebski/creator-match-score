@@ -135,7 +135,7 @@ const Index = () => {
             <span className="text-lg text-gray-500">from</span>
             <img src="/lovable-uploads/29dfe969-db16-4d10-a4a8-b7fa6bd8b87a.png" alt="ReferralCandy" className="h-8 w-auto" />
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">See if a creator is the right fit for your brand. Our AI analyzes their social profiles to score audience alignment, content quality, and brand compatibility</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">See if a creator is the right fit for your e-commerce brand. Our AI analyzes their social profiles to score audience alignment, content quality, and brand compatibility</p>
         </div>
 
         {/* Progress Indicator */}
