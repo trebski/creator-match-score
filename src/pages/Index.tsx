@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle, XCircle, Instagram, Youtube, Music, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-
 const Index = () => {
   const [step, setStep] = useState(1);
   const [businessData, setBusinessData] = useState({
@@ -134,16 +133,9 @@ const Index = () => {
           <h1 className="text-5xl font-bold gradient-text mb-2">Creator Match</h1>
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="text-lg text-gray-500">from</span>
-            <img 
-              src="/lovable-uploads/29dfe969-db16-4d10-a4a8-b7fa6bd8b87a.png" 
-              alt="ReferralCandy" 
-              className="h-8 w-auto"
-            />
+            <img src="/lovable-uploads/29dfe969-db16-4d10-a4a8-b7fa6bd8b87a.png" alt="ReferralCandy" className="h-8 w-auto" />
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover if a creator is the perfect match for your brand. Our advanced analysis compares 
-            social media profiles to find ideal partnerships for affiliate and ambassador programs.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">See if a creator is the right fit for your brand. Our AI analyzes their social profiles to score audience alignment, content quality, and brand compatibility</p>
         </div>
 
         {/* Progress Indicator */}
