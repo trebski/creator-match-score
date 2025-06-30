@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 332 81% 56%;
+    --primary: 326 100% 53%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -33,7 +33,7 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 332 81% 56%;
+    --ring: 326 100% 53%;
 
     --radius: 0.5rem;
 
@@ -44,7 +44,7 @@
     --sidebar-accent: 0 0% 96%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 332 81% 56%;
+    --sidebar-ring: 326 100% 53%;
   }
 
   .dark {
@@ -57,7 +57,7 @@
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 332 81% 56%;
+    --primary: 326 100% 53%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 15%;
@@ -74,15 +74,15 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 332 81% 56%;
+    --ring: 326 100% 53%;
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 332 81% 56%;
+    --sidebar-primary: 326 100% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 16%;
     --sidebar-accent-foreground: 0 0% 96%;
     --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 332 81% 56%;
+    --sidebar-ring: 326 100% 53%;
   }
 }
 
@@ -93,5 +93,26 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, #ff0e8b 0%, #ff4fa8 100%);
+  }
+  
+  .gradient-primary-hover {
+    background: linear-gradient(135deg, #e60c7b 0%, #ff0e8b 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #ff0e8b 0%, #ff6bb3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-progress {
+    background: linear-gradient(90deg, #ff0e8b 0%, #ff4fa8 100%);
   }
 }

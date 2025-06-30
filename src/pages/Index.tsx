@@ -129,7 +129,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold gradient-text mb-6">
             Creator Match Pro
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -141,15 +141,15 @@ const Index = () => {
         {/* Progress Indicator */}
         <div className="flex justify-center mb-8">
           <div className="flex items-center space-x-4">
-            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 1 ? 'bg-primary text-white' : 'bg-gray-200'}`}>
+            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 1 ? 'gradient-primary text-white' : 'bg-gray-200'}`}>
               1
             </div>
-            <div className={`w-16 h-1 ${step >= 2 ? 'bg-primary' : 'bg-gray-200'}`}></div>
-            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 2 ? 'bg-primary text-white' : 'bg-gray-200'}`}>
+            <div className={`w-16 h-1 ${step >= 2 ? 'gradient-progress' : 'bg-gray-200'}`}></div>
+            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 2 ? 'gradient-primary text-white' : 'bg-gray-200'}`}>
               2
             </div>
-            <div className={`w-16 h-1 ${step >= 3 ? 'bg-primary' : 'bg-gray-200'}`}></div>
-            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 3 ? 'bg-primary text-white' : 'bg-gray-200'}`}>
+            <div className={`w-16 h-1 ${step >= 3 ? 'gradient-progress' : 'bg-gray-200'}`}></div>
+            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${step >= 3 ? 'gradient-primary text-white' : 'bg-gray-200'}`}>
               3
             </div>
           </div>
@@ -224,7 +224,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-3">
+                <Button type="submit" className="w-full gradient-primary hover:gradient-primary-hover text-white py-3 border-0">
                   Continue to creator info
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -292,7 +292,7 @@ const Index = () => {
                   <Button type="button" onClick={() => setStep(1)} variant="outline" className="flex-1">
                     Back
                   </Button>
-                  <Button type="submit" className="flex-1 bg-primary hover:bg-primary/90 text-white">
+                  <Button type="submit" className="flex-1 gradient-primary hover:gradient-primary-hover text-white border-0">
                     Analyze match
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -391,7 +391,7 @@ const Index = () => {
                     <Button 
                       type="submit" 
                       disabled={isEmailSubmitting}
-                      className="w-full bg-primary hover:bg-primary/90 text-white"
+                      className="w-full gradient-primary hover:gradient-primary-hover text-white border-0"
                     >
                       {isEmailSubmitting ? (
                         <>
