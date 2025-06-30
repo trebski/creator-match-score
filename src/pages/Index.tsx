@@ -11,10 +11,10 @@ import { useToast } from '@/hooks/use-toast';
 const Index = () => {
   const [step, setStep] = useState(1);
   const [businessData, setBusinessData] = useState({
+    website: '',
     instagram: '',
     youtube: '',
-    tiktok: '',
-    website: ''
+    tiktok: ''
   });
   const [creatorData, setCreatorData] = useState({
     instagram: '',
@@ -26,6 +26,14 @@ const Index = () => {
 
   const handleBusinessSubmit = (e) => {
     e.preventDefault();
+    if (!businessData.website) {
+      toast({
+        title: "Missing Information",
+        description: "Please provide your website URL.",
+        variant: "destructive"
+      });
+      return;
+    }
     if (!businessData.instagram && !businessData.youtube && !businessData.tiktok) {
       toast({
         title: "Missing Information",
@@ -120,12 +128,26 @@ const Index = () => {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-gray-800">Your Business Information</CardTitle>
               <CardDescription className="text-gray-600">
-                Enter your social media accounts and website to get started
+                Enter your website and social media accounts to get started
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleBusinessSubmit} className="space-y-6">
                 <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="business-website" className="text-gray-700">
+                      Website URL *
+                    </Label>
+                    <Input
+                      id="business-website"
+                      placeholder="https://yourbusiness.com"
+                      value={businessData.website}
+                      onChange={(e) => setBusinessData({...businessData, website: e.target.value})}
+                      className="mt-1"
+                      required
+                    />
+                  </div>
+
                   <div>
                     <Label htmlFor="business-instagram" className="flex items-center gap-2 text-gray-700">
                       <Instagram className="w-4 h-4 text-pink-500" />
@@ -164,19 +186,6 @@ const Index = () => {
                       placeholder="@yourbusiness"
                       value={businessData.tiktok}
                       onChange={(e) => setBusinessData({...businessData, tiktok: e.target.value})}
-                      className="mt-1"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="business-website" className="text-gray-700">
-                      Website URL (Optional)
-                    </Label>
-                    <Input
-                      id="business-website"
-                      placeholder="https://yourbusiness.com"
-                      value={businessData.website}
-                      onChange={(e) => setBusinessData({...businessData, website: e.target.value})}
                       className="mt-1"
                     />
                   </div>
