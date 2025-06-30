@@ -98,21 +98,21 @@
 
 @layer utilities {
   .gradient-primary {
-    background: linear-gradient(135deg, #ff0e8b 0%, #ff4fa8 100%);
+    background: linear-gradient(135deg, #ff0e8b 0%, #8b5cf6 100%);
   }
   
   .gradient-primary-hover {
-    background: linear-gradient(135deg, #e60c7b 0%, #ff0e8b 100%);
+    background: linear-gradient(135deg, #e60c7b 0%, #7c3aed 100%);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, #ff0e8b 0%, #ff6bb3 100%);
+    background: linear-gradient(135deg, #ff0e8b 0%, #a855f7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
   .gradient-progress {
-    background: linear-gradient(90deg, #ff0e8b 0%, #ff4fa8 100%);
+    background: linear-gradient(90deg, #ff0e8b 0%, #8b5cf6 100%);
   }
 }
