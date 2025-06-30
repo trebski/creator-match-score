@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle, XCircle, Instagram, Youtube, Music, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
 const Index = () => {
   const [step, setStep] = useState(1);
   const [businessData, setBusinessData] = useState({
@@ -135,7 +136,7 @@ const Index = () => {
             <span className="text-lg text-gray-500">from</span>
             <img src="/lovable-uploads/29dfe969-db16-4d10-a4a8-b7fa6bd8b87a.png" alt="ReferralCandy" className="h-8 w-auto" />
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">See if a creator is the right fit for your e-commerce brand. Our AI analyzes their social profiles to score audience alignment, content quality, and brand compatibility</p>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">See if a creator is the right fit for your brand. Our AI analyzes their social profiles to score audience alignment, content quality, authenticity, and brand compatibility</p>
         </div>
 
         {/* Progress Indicator */}
@@ -158,8 +159,8 @@ const Index = () => {
         {/* Step 1: Business Information */}
         {step === 1 && <Card className="max-w-2xl mx-auto shadow-xl border-0 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-gray-800">Your Business Information</CardTitle>
-              <CardDescription className="text-gray-600">
+              <CardTitle className="text-2xl text-gray-900">Your Business Information</CardTitle>
+              <CardDescription className="text-gray-700">
                 Enter your website and social media accounts to get started
               </CardDescription>
             </CardHeader>
@@ -167,7 +168,7 @@ const Index = () => {
               <form onSubmit={handleBusinessSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="business-website" className="text-gray-700">
+                    <Label htmlFor="business-website" className="text-gray-800">
                       Website URL *
                     </Label>
                     <Input id="business-website" placeholder="https://yourbusiness.com" value={businessData.website} onChange={e => setBusinessData({
@@ -177,7 +178,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="business-instagram" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="business-instagram" className="flex items-center gap-2 text-gray-800">
                       <Instagram className="w-4 h-4 text-pink-500" />
                       Instagram Handle
                     </Label>
@@ -188,7 +189,7 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="business-youtube" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="business-youtube" className="flex items-center gap-2 text-gray-800">
                       <Youtube className="w-4 h-4 text-red-500" />
                       YouTube Channel
                     </Label>
@@ -199,7 +200,7 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="business-tiktok" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="business-tiktok" className="flex items-center gap-2 text-gray-800">
                       <Music className="w-4 h-4 text-black" />
                       TikTok Handle
                     </Label>
@@ -221,8 +222,8 @@ const Index = () => {
         {/* Step 2: Creator Information */}
         {step === 2 && <Card className="max-w-2xl mx-auto shadow-xl border-0 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-gray-800">Creator Information</CardTitle>
-              <CardDescription className="text-gray-600">
+              <CardTitle className="text-2xl text-gray-900">Creator Information</CardTitle>
+              <CardDescription className="text-gray-700">
                 Enter the creator's social media accounts to analyze compatibility
               </CardDescription>
             </CardHeader>
@@ -230,7 +231,7 @@ const Index = () => {
               <form onSubmit={handleCreatorSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="creator-instagram" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="creator-instagram" className="flex items-center gap-2 text-gray-800">
                       <Instagram className="w-4 h-4 text-pink-500" />
                       Creator's Instagram Handle
                     </Label>
@@ -241,7 +242,7 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="creator-youtube" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="creator-youtube" className="flex items-center gap-2 text-gray-800">
                       <Youtube className="w-4 h-4 text-red-500" />
                       Creator's YouTube Channel
                     </Label>
@@ -252,7 +253,7 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="creator-tiktok" className="flex items-center gap-2 text-gray-700">
+                    <Label htmlFor="creator-tiktok" className="flex items-center gap-2 text-gray-800">
                       <Music className="w-4 h-4 text-black" />
                       Creator's TikTok Handle
                     </Label>
@@ -279,7 +280,7 @@ const Index = () => {
         {/* Step 3: Results */}
         {step === 3 && results && <Card className="max-w-2xl mx-auto shadow-xl border-0 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-gray-800">Match Analysis Results</CardTitle>
+              <CardTitle className="text-2xl text-gray-900">Match Analysis Results</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Compatibility Score */}
@@ -290,18 +291,18 @@ const Index = () => {
                 <h3 className="text-xl font-semibold mb-2">
                   {results.recommendation === 'excellent' ? 'Excellent Match!' : results.recommendation === 'good' ? 'Good Match' : 'Poor Match'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700">
                   {results.recommendation === 'excellent' ? 'This creator would be an ideal partner for your brand.' : results.recommendation === 'good' ? 'This creator could be a suitable partner with some considerations.' : 'This creator may not be the best fit for your brand at this time.'}
                 </p>
               </div>
 
               {/* Analysis Reasons */}
               <div>
-                <h4 className="font-semibold mb-3 text-gray-800">Analysis Insights:</h4>
+                <h4 className="font-semibold mb-3 text-gray-900">Analysis Insights:</h4>
                 <div className="space-y-2">
                   {results.reasons.map((reason, index) => <div key={index} className="flex items-start gap-2">
                       {results.recommendation !== 'poor' ? <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" /> : <XCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />}
-                      <span className="text-gray-700">{reason}</span>
+                      <span className="text-gray-800">{reason}</span>
                     </div>)}
                 </div>
               </div>
@@ -316,15 +317,15 @@ const Index = () => {
               {/* Email Capture Section */}
               {!emailSent && <div className="border-t pt-6">
                   <div className="text-center mb-4">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Get Detailed Analysis Report</h4>
-                    <p className="text-gray-600 text-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Get Detailed Analysis Report</h4>
+                    <p className="text-gray-700 text-sm">
                       Receive comprehensive insights, competitor analysis, and actionable recommendations directly to your inbox.
                     </p>
                   </div>
                   
                   <form onSubmit={handleEmailSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="email" className="flex items-center gap-2 text-gray-700">
+                      <Label htmlFor="email" className="flex items-center gap-2 text-gray-800">
                         <Mail className="w-4 h-4 text-purple-500" />
                         Email Address
                       </Label>
