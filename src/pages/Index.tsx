@@ -135,9 +135,9 @@ const Index = () => {
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="text-lg text-gray-500">from</span>
             <img 
-              src="/lovable-uploads/d776b04b-04f8-4707-90ce-460a477acffc.png" 
+              src="/lovable-uploads/29dfe969-db16-4d10-a4a8-b7fa6bd8b87a.png" 
               alt="ReferralCandy" 
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
