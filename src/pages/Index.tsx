@@ -225,7 +225,7 @@ const Index = () => {
                 </div>
                 
                 <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-3">
-                  Continue to Creator Info
+                  Continue to creator info
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </form>
@@ -293,7 +293,7 @@ const Index = () => {
                     Back
                   </Button>
                   <Button type="submit" className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-                    Analyze Match
+                    Analyze match
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
@@ -396,11 +396,11 @@ const Index = () => {
                       {isEmailSubmitting ? (
                         <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                          Sending Report...
+                          Sending report...
                         </>
                       ) : (
                         <>
-                          Send Full Report
+                          Send full report
                           <Mail className="ml-2 w-4 h-4" />
                         </>
                       )}
@@ -427,7 +427,7 @@ const Index = () => {
                 variant="outline" 
                 className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
               >
-                Analyze Another Creator
+                Analyze another creator
               </Button>
             </CardContent>
           </Card>
